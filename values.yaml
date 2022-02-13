@@ -1,0 +1,12 @@
+customPlaybooks:
+- triggers:
+  - on_deployment_update:
+      namespace_prefix: production
+  actions:
+  - resource_babysitter:
+      omitted_fields: []
+      fields_to_monitor:
+      - spec.template.spec.containers[].image
+  sinks:
+  - main_slack_sink
+  - robusta_ui_sink
