@@ -7,9 +7,6 @@ customPlaybooks:
       omitted_fields: []
       fields_to_monitor:
       - spec.template.spec.containers[].image
-  sinks:
-  - main_slack_sink
-  - robusta_ui_sink
 - triggers:
   - on_schedule:
       fixed_delay_repeat:
@@ -19,6 +16,4 @@ customPlaybooks:
   - http_stress_test:
       url: devops-toolkit.production
       n: 100
-  sinks:
-  - main_slack_sink
-  - robusta_ui_sink
+  

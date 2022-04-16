@@ -7,6 +7,3 @@ customPlaybooks:
       omitted_fields: []
       fields_to_monitor:
       - spec.template.spec.containers[].image
-  sinks:
-  - main_slack_sink
-  - robusta_ui_sink
