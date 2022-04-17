@@ -6,14 +6,9 @@ customPlaybooks:
   - resource_babysitter:
       omitted_fields: []
       fields_to_monitor:
-      - spec.template.spec.containers[].image
-  sinks:
-  - main_slack_sink
-  - robusta_ui_sink
+      - spec.template.spec.containers[0].image
 - triggers:
-  - on_kubernetes_any_resource_all_changes: {}
+  - on_kubernetes_any_resource_all_changes:
+      namespace_prefix: a-team
   actions:
   - resource_babysitter: {}
-  sinks:
-  - main_slack_sink
-  - robusta_ui_sink

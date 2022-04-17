@@ -6,4 +6,4 @@ customPlaybooks:
   - resource_babysitter:
       omitted_fields: []
       fields_to_monitor:
-      - spec.template.spec.containers[].image
+      - spec.template.spec.containers[0].image

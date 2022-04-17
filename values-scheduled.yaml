@@ -6,7 +6,7 @@ customPlaybooks:
   - resource_babysitter:
       omitted_fields: []
       fields_to_monitor:
-      - spec.template.spec.containers[].image
+      - spec.template.spec.containers[0].image
 - triggers:
   - on_schedule:
       fixed_delay_repeat:
@@ -14,6 +14,6 @@ customPlaybooks:
         seconds_delay: 10
   actions:
   - http_stress_test:
-      url: devops-toolkit.production
+      url: http://devops-toolkit.production
       n: 100
   
